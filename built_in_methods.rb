@@ -57,7 +57,7 @@
 # In this example, the return value is true, because "Jeff" does start with "J".
 # The puts command prints the return value of the start_with? method (true) to the console.
 first_name = "Jeff"
-# puts first_name.start_with?("J")
+puts first_name.start_with?("J")
 
 guitarist = "Teeter"
 drummer = "Mike Hand"
@@ -82,7 +82,7 @@ puts guitarist.eql?("Teet")
 # guirist variable is called on the second time to print, it will still print the "Nicky Three Teets" value and I 
 # would assume this is going to be the case until the value is replaced or adjusted again with another method. 
 # This is the same case for the drummer variable; it will now return the value "Hand of god...little 'g' big 'H'." until
-# the variable is replaced or adjust with another different string. 
+# the variable is replaced or adjusted with another different string. 
 
 puts guitarist.replace("Nicky Three Teets")
 puts drummer.replace("Hand of god...little 'g' big 'H'.")
@@ -95,6 +95,36 @@ puts drummer
 # https://ruby-doc.org/core-3.1.0/Integer.html
 # Include comments above each method call explaining the impact and return value of that method.
 
+integer_1 = 23490823094823098423
+integer_2 = 324
+float_is_a_different_kinda_interger = 5.857
+
+# The div method is called on the integer_1 variable which stores the integer 23,490,823,094,823,098,423.
+# The div method will divide the integer stored in the variable integer_1 by the value of the integer 
+# passed in the argument, in this case 23. In this example the return value will show 1021340134557526018 which 
+# is the quotient in the problem 23,490,823,094,823,098,423/23. The puts command will print the return value.
+
+# The pow method in the second example is called on the integer_2 variable which stores the integer 324. 
+# The pow method returns the modular exponentiation of self. Modular exponentiation is the remainder when 
+# an integer b (the base) is raised to the power e (the exponent), and divided by a positive 
+# integer m (the modulus); that is, c = b^e mod m. In this example integer_2 = b. Our arguments will represent the 
+# exponent e and the modulus m respectively. So e = 500 and m = 8000. In this case the return value is 
+# 5376 and the puts command will print the return value. 
+# NOTE: I'm not sure how to calculate this without using a computer so I'm not entirely sure the answer is correct
+# but I do think I'm correct about my understanding of these input values and the computer returned a value. This might
+# not be the best example but it was fun to try and figure out. 
+
+# The last two examples call the floor and ceil methods on the float 5.857 stored in the variable float_is_a_different_kinda_interger.
+# The first method, floor, will round the float down to the next full integer smaller than or equal to self.
+# This will return the value of 5 and the puts command will print that return value. 
+# The ceil method is called on the float_is_a_different_kinda_interger integer in the last example and will 
+# round the float up to the next full integer. In this case the return value is 6 and the puts command will print
+# that return value. 
+
+puts integer_1.div(23)
+puts integer_2.pow(500, 8000)
+puts float_is_a_different_kinda_interger.floor
+puts float_is_a_different_kinda_interger.ceil
 
 
 # SECTION 4: Calling methods on variables assigned to arrays.
@@ -102,3 +132,34 @@ puts drummer
 # Call a different built-in Ruby method on each of your variables. 
 # https://ruby-doc.org/core-3.1.0/Array.html
 # Include comments above each method call explaining the impact and return value of that method.
+
+bone_creature_songs = ["Portcullis", "Slumbers", "A Deed With No Name", "Fog of War", "Whiskey Throttle", "Monarch & Martyr", "F.A.N.G.S.", "Slug", "Black Mahogany", "Trash"]
+comic_books = ["Battle Chasers", "Low", "Black Science", "Fathom", "Soulfire", "Seven to Eternity", "Portcullis"]
+
+# The union method is called on the variable assigned to the array bone_creature_songs which stores the names of ten 
+# Bone Creature songs. The union method will combine the ten elements in the bone_creature_songs array with the specified
+# argument which is the variable comic_books. The comic_books variable is assigned to an array which houses seven elements including one
+# element that is the same in the other variable bone_creature_songs. The return value will be the combination of all 17 elements 
+# written in order from index position [0] to index position [10] in the bone_creature_songs array followed by index postion [0] to index
+# position [7] in the comic_books array. However, because union takes out duplicates, there will only be 16 elements returned and the duplicate
+# will be removed. The puts command will print the return value.   
+
+puts bone_creature_songs.union(comic_books)
+
+# The each method is called on the bone_creature_songs variable which contains ten indexed string elements.
+# The each method passes each element index through the specified code block. The puts command in the code block 
+# will print the defined string with each respective element in the bone_creature_songs array. The return value will be 
+# ten versions of the same string adjusting the bc_songs variable interpolated inside the string to reflect each individual 
+# element in the array.  
+
+bone_creature_songs.each do |bc_song|
+    puts "Oh man, #{bc_song}! This is my favorite Bone Creature song! This song slaps!"
+end
+
+# The shuffle method is called on the comic_books variable which contains seven indexed strings elements. 
+# The shuffle method rearranges the elements in the array at random by adjusting the index positions. The puts command will
+# print the return value and the return value will be adjusted every time the method is called on the variable. The array 
+# will stay shuffled in the new order until the method is called again or adjusted by another method.
+    
+
+puts comic_books.shuffle!
