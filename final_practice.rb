@@ -10,6 +10,7 @@ def greeting
     "Hey there homie, what's good?"
 end
 
+puts greeting
 
 # What is the return value of your method?
     # The return value of my method is going to be a string that reads "Hey there homie, what's good?". The string 
@@ -24,8 +25,8 @@ def custom_greeting(name)
     "Hey there #{name} my friend. What is good with this life and you?"
 end
 
-p custom_greeting("James")
-p custom_greeting("Josh")
+puts custom_greeting("James")
+puts custom_greeting("Josh")
 
 # What is the return value of your method?
     # This method custom_greeting will print out the defined string in the code block with the interpolated variable replaced by the 
@@ -42,7 +43,8 @@ def greet_person(first, middle, last)
     "Hey now, I hear your full name is #{first} #{middle} #{last}, is that correct?"
 end
 
-p greet_person("Homer", "Jay", "Simpson")
+puts greet_person("Homer", "Jay", "Simpson")
+puts greet_person("Jesse", "Graham", "Thomas")
 
 # What is the return value of your method?
     # This method greet_person will print out the defined string in the code block with the 3 interpolated variables replaced by the 
@@ -60,9 +62,17 @@ def square(int)
     puts "Your value is #{Math.sqrt(int)}."
 end
 
+def square2(int)
+   puts "Your value is #{int**int}"
+end
+
 square(9)
 square(49)
 square(112)
+
+square2(9)
+square2(49)
+square2(112)
 # What is the return value of your method?
     # The square method defined above is going to return a string that reads, "Your value is ____". The blank space
     # will be filled with an interpolated float that is based on the value of the argument given."
